@@ -5,18 +5,15 @@ require("craftzdog.plugins")
 
 vim.opt.clipboard:append({ "unnamedplus" })
 
--- win32yank for windows copy/paste
-vim.g.clipboard = {
-	name = "win32yank-wsl",
-	copy = {
-		["+"] = "win32yank -i --crlf",
-		["*"] = "win32yank -i --crlf",
-	},
-	paste = {
-		["+"] = "win32yank -o --crlf",
-		["*"] = "win32yank -o --crlf",
-	},
-	cache_enable = 0,
-}
+local has = function(x)
+	return vim.fn.has(x) == 1
+end
+local is_mac = has("macunix")
+local is_win = has("win32")
 
-
+if is_mac then
+	require("craftzdog.macos")
+end
+if is_win then
+	require("craftzdog.windows")
+end
