@@ -58,6 +58,7 @@ end)
 vim.keymap.set("n", "\\\\", function()
 	builtin.buffers()
 end)
+vim.keymap.set("n", ";b", "<cmd>Telescope file_browser<CR>", { noremap = true })
 vim.keymap.set("n", ";t", function()
 	builtin.help_tags()
 end)
@@ -76,6 +77,6 @@ vim.keymap.set("n", "sf", function()
 		grouped = true,
 		previewer = false,
 		initial_mode = "normal",
-		layout_config = { height = 40 },
+		layout_config = { height = 70 },
 	})
 end)

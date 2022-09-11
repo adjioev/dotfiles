@@ -5,6 +5,8 @@ end
 
 nvmTree.setup({
 	sort_by = "case_sensitive",
+	hijack_netrw = false,
+	hijack_unnamed_buffer_when_opening = false,
 	view = {
 		adaptive_size = true,
 		mappings = {
@@ -20,3 +22,6 @@ nvmTree.setup({
 		dotfiles = true,
 	},
 })
+
+vim.keymap.set("n", "<F5>", "<cmd>NvimTreeToggle<cr>", { silent = true })
+vim.keymap.set("n", "<F6>", "<cmd>NvimTreeFindFileToggle<cr>", { silent = true })

@@ -12,6 +12,7 @@ packer.startup(function(use)
 		"svrana/neosolarized.nvim",
 		requires = { "tjdevries/colorbuddy.nvim" },
 	})
+	use("kyazdani42/nvim-tree.lua")
 	use("nvim-lualine/lualine.nvim") -- Statusline
 	use("nvim-lua/plenary.nvim") -- Common utilities
 	use("onsails/lspkind-nvim") -- vscode-like pictograms
@@ -30,6 +31,7 @@ packer.startup(function(use)
 		"nvim-treesitter/nvim-treesitter",
 		run = ":TSUpdate",
 	})
+	use("nvim-treesitter/nvim-treesitter-textobjects")
 	use("kyazdani42/nvim-web-devicons") -- File icons
 	use("nvim-telescope/telescope.nvim")
 	use("nvim-telescope/telescope-file-browser.nvim")
@@ -57,10 +59,5 @@ packer.startup(function(use)
 	use("shaunsingh/nord.nvim")
 	use("folke/tokyonight.nvim")
 	use("AckslD/nvim-neoclip.lua")
-	--use({
-	--	"kyazdani42/nvim-tree.lua",
-	--	requires = {
-	--		"kyazdani42/nvim-web-devicons", -- optional, for file icons
-	--	},
-	-- })
+	use("kylechui/nvim-surround")
 end)

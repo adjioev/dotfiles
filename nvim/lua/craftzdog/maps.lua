@@ -35,4 +35,4 @@ keymap.set("n", "<C-w><down>", "<C-w>-")
 
 -- json format
 keymap.set("n", "<C-w><f>", ":%!python -m json.tool")
-keymap.set("n", "<Esc>", ":noh<Return>")
+keymap.set("n", "<Esc>", ":noh<Return>", { silent = true })
